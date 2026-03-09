@@ -25,3 +25,7 @@ variable "ssm_private_subnets" {
 variable "ssm_pod_subnets" {
   type = list(string)
 }
+
+variable "k8s_version" {
+  type = string
+}
