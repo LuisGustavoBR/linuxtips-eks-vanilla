@@ -41,3 +41,18 @@ variable "auto_scale_options" {
 variable "nodes_instance_sizes" {
   type = list(string)
 }
+
+variable "addon_cni_version" {
+  type    = string
+  default = "v1.21.1-eksbuild.3"
+}
+
+variable "addon_coredns_version" {
+  type    = string
+  default = "v1.13.2-eksbuild.1"
+}
+
+variable "addon_kubeproxy_version" {
+  type    = string
+  default = "v1.34.3-eksbuild.5"
+}
