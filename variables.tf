@@ -29,3 +29,15 @@ variable "ssm_pod_subnets" {
 variable "k8s_version" {
   type = string
 }
+
+variable "auto_scale_options" {
+  type = object({
+    min     = number
+    max     = number
+    desired = number
+  })
+}
+
+variable "nodes_instance_sizes" {
+  type = list(string)
+}
