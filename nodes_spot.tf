@@ -1,6 +1,6 @@
-resource "aws_eks_node_group" "main" {
+resource "aws_eks_node_group" "spot" {
   cluster_name    = aws_eks_cluster.main.id
-  node_group_name = "${var.project_name}-workers"
+  node_group_name = "${var.project_name}-workers-spot"
 
   node_role_arn = aws_iam_role.eks_nodes_role.arn
 
@@ -14,12 +14,12 @@ resource "aws_eks_node_group" "main" {
     min_size     = lookup(var.auto_scale_options, "min")
   }
 
-  capacity_type = "ON_DEMAND"
+  capacity_type = "SPOT"
 
   labels = {
     "capacity/os" = "AMAZON_LINUX"
     "capacity/arch" = "X86_64"
-    "capacity/type" = "ON_DEMAND"
+    "capacity/type" = "SPOT"
   }
 
   tags = {
