@@ -1,0 +1,4 @@
+bucket  = "linuxtips-s3-eks-state-files-bordon"
+key     = "eks/cluster/prod/state"
+region  = "us-east-1"
+profile = "personal"
