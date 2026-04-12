@@ -17,7 +17,7 @@ resource "aws_eks_node_group" "spot" {
   capacity_type = "SPOT"
 
   labels = {
-    "capacity/os" = "AMAZON_LINUX"
+    "capacity/os"   = "AMAZON_LINUX"
     "capacity/arch" = "X86_64"
     "capacity/type" = "SPOT"
   }

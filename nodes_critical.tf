@@ -1,6 +1,6 @@
-resource "aws_eks_node_group" "main" {
+resource "aws_eks_node_group" "critical" {
   cluster_name    = aws_eks_cluster.main.id
-  node_group_name = "${var.project_name}-workers"
+  node_group_name = "${var.project_name}-workers-critical"
 
   node_role_arn = aws_iam_role.eks_nodes_role.arn
 
@@ -16,10 +16,13 @@ resource "aws_eks_node_group" "main" {
 
   capacity_type = "ON_DEMAND"
 
+  ami_type = "BOTTLEROCKET_x86_64"
+
   labels = {
-    "capacity/os"   = "AMAZON_LINUX"
+    "capacity/os"   = "BOTTLEROCKET"
     "capacity/arch" = "X86_64"
     "capacity/type" = "ON_DEMAND"
+    "severity"      = "critical"
   }
 
   tags = {

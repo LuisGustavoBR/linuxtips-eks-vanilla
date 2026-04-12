@@ -56,3 +56,11 @@ variable "addon_kubeproxy_version" {
   type    = string
   default = "v1.34.3-eksbuild.5"
 }
+
+#### Node Groups - Custom
+
+variable "custom_ami" {
+  type        = string
+  description = "Customized AMI ID for the nodes"
+  default     = "ami-01d396130bcd204a1"
+}

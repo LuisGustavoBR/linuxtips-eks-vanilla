@@ -16,10 +16,10 @@ resource "aws_eks_node_group" "bottlerocket_spot" {
 
   capacity_type = "SPOT"
 
-  ami_type = "BOTTLEROCKET_X86_64"
+  ami_type = "BOTTLEROCKET_x86_64"
 
   labels = {
-    "capacity/os" = "BOTTLEROCKET"
+    "capacity/os"   = "BOTTLEROCKET"
     "capacity/arch" = "X86_64"
     "capacity/type" = "SPOT"
   }
